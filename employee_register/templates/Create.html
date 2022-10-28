@@ -1,0 +1,48 @@
+</DOCTYPE html>
+<head>
+    <title>Create Record</title>
+</head>
+<body>
+    <center>
+        <h2>Adding new Emplyee Record</h2>
+        <hr/>
+        <form method="post">
+            {% csrf_token %}
+        <table>
+            <tr>
+                <td>Employee Name</td>
+                <td> <input type ="text" placeholder="Employee Name" name = "employee_name" > </td>
+            </tr>
+            <tr>
+                <td>Employee ID</td>
+                <td> <input type ="text" placeholder="Employee id" name = "employee_id" > </td>
+            </tr>
+            <tr>
+                <td>Employee Team</td>
+                <td> <input type ="text" placeholder="Employee Team" name = "employee_team" > </td>
+            </tr>
+            <tr>
+                <td>Employee Team Employees</td>
+                <td> <input type ="text" placeholder="Team Employees" name = "employee_team_employees" > </td>
+            </tr>
+            <tr>
+                <td>Employee Team Leader</td>
+                <td> <input type ="text" placeholder="EmployeeTeam Leader" name = "employee_teamleader" > </td>
+            </tr>
+            <tr>
+                <td>Employee Full Time 
+                <input type ="radio" value="Y" name = "employee_fulltime" group = "employee_fulltime" > Yes |
+                <input type ="radio" value="N" name = "employee_fulltime" group = "employee_fulltime" > No 
+                </td>
+            </tr>
+
+        </table>
+    
+        <input type="submit" value="Submit Record">
+        
+
+        </form>
+        <a href = "{% url "employee_display" %}"> Display Employee Record </a>
+    </center>
+</body>
+</html>

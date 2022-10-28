@@ -1,0 +1,35 @@
+</DOCTYPE html>
+
+<head>
+    <title> Employee Project </title>
+</head>
+<body>
+    <center>
+        <h1> Performing CRUD operations</h1>
+        <h2>Using Django</h2>
+        <hr/>
+        <a href = "{% url "employee_insert" %}"> Add Employee Record </a>
+        <table border = 3>
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Team</th>
+                <th>Team Employees</th>
+                <th>Team Leader</th>
+                <th>Full Time</th>
+            </tr>
+            {% for display_emp in crud_employee %}
+            <tr>
+                <td>{{display_emp.id}}</td>
+                <td>{{display_emp.employee_name}}</td>
+                <td>{{display_emp.employee_id}}</td>
+                <td>{{display_emp.employee_team}}</td>
+                <td>{{display_emp.employee_team_employees}}</td>
+                <td>{{display_emp.employee_teamleader}}</td>
+                <td>{{display_emp.employee_fulltime}}</td>
+            {% endfor %}}
+
+        </table>
+    </center>
+</body>
+</html>
