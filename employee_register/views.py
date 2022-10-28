@@ -4,7 +4,7 @@ from django.contrib import messages
 
 def employee_display(request):
     results = crud_employee.objects.all()
-    return render(request, "Index.html", {"crud_employe":results})
+    return render(request, "Index.html", {"crud_employee":results})
 
 def employee_insert(request):
     if request.method == "POST":
@@ -18,8 +18,8 @@ def employee_insert(request):
             save_emp.employee_team = request.POST.get('employee_fulltime')
             save_emp.save()
             
-            messages.success(request , "The record is saved succesfully!")
-            return render(request, "Create.html")
+        messages.success(request , "The record is saved succesfully!")
+        return render(request, "Create.html")
         
     return render(request, "Create.html")
 

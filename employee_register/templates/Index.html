@@ -11,6 +11,7 @@
         <a href = "{% url "employee_insert" %}"> Add Employee Record </a>
         <table border = 3>
             <tr>
+                <th>Num</th>
                 <th>Name</th>
                 <th>ID</th>
                 <th>Team</th>
@@ -27,7 +28,8 @@
                 <td>{{display_emp.employee_team_employees}}</td>
                 <td>{{display_emp.employee_teamleader}}</td>
                 <td>{{display_emp.employee_fulltime}}</td>
-            {% endfor %}}
+            </tr>
+            {% endfor %}
 
         </table>
     </center>

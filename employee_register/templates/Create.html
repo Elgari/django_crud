@@ -11,38 +11,46 @@
         <table>
             <tr>
                 <td>Employee Name</td>
-                <td> <input type ="text" placeholder="Employee Name" name = "employee_name" > </td>
+                <td> <input type ="text" placeholder="Employee Name.." name = "employee_name" > </td>
             </tr>
             <tr>
                 <td>Employee ID</td>
-                <td> <input type ="text" placeholder="Employee id" name = "employee_id" > </td>
+                <td> <input type ="text" placeholder="Employee id.." name = "employee_id" > </td>
             </tr>
             <tr>
                 <td>Employee Team</td>
-                <td> <input type ="text" placeholder="Employee Team" name = "employee_team" > </td>
+                <td> <input type ="text" placeholder="Employee Team.." name = "employee_team" > </td>
             </tr>
             <tr>
                 <td>Employee Team Employees</td>
-                <td> <input type ="text" placeholder="Team Employees" name = "employee_team_employees" > </td>
+                <td> <input type ="text" placeholder="Team Employees.." name = "employee_team_employees" > </td>
             </tr>
             <tr>
                 <td>Employee Team Leader</td>
-                <td> <input type ="text" placeholder="EmployeeTeam Leader" name = "employee_teamleader" > </td>
+                <td> <input type ="text" placeholder="EmployeeTeam Leader.." name = "employee_teamleader" > </td>
             </tr>
             <tr>
-                <td>Employee Full Time 
+                <td>Employee fulltime</td>
+                <td>
                 <input type ="radio" value="Y" name = "employee_fulltime" group = "employee_fulltime" > Yes |
                 <input type ="radio" value="N" name = "employee_fulltime" group = "employee_fulltime" > No 
-                </td>
+            </td>
             </tr>
 
         </table>
     
         <input type="submit" value="Submit Record">
+
+        {% if messeages %}
+        {{hi}}
+        {% for result in messeages  %} 
+        <b>{{result}}</b>
+        {% endfor %}
+        {% endif %}
         
 
-        </form>
-        <a href = "{% url "employee_display" %}"> Display Employee Record </a>
+    </form>
+    <a href = "{% url "employee_display" %}"> Display Employee Record </a>
     </center>
 </body>
 </html>
