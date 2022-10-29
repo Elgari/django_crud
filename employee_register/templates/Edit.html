@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+
+    <title>Edit and Update Employee</title>
+</head>
+<body>
+    <h1>Edit Employee Record</h1>
+    <h2>The Employee Number Record {{crud_employee.id}}</h2>
+    <hr/>
+    <form method="POST" action="/Update/{{crud_employee.id}}">
+        {% csrf_token %}
+    
+    <table>
+        <tr>
+            <tr>
+            <td>Employee Name</td>
+            <td><input type="text" name="employee_name" value="{{crud_employee.employee_name}}"></td>
+            </tr>
+            <tr>
+            <td>Employee ID</td>
+            <td><input type="text" name="employee_id" value="{{crud_employee.employee_id}}"></td>
+            </tr>
+            <tr>
+            <td>Employee Team</td>
+            <td><input type="text" name="employee_team" value="{{crud_employee.employee_team}}"></td>
+            </tr>
+            <tr>
+            <td>Employee Team Employees</td>
+            <td><input type="text" name="employee_team_employees" value="{{crud_employee.employee_team_employees}}"></td>
+            </tr>
+            <tr>
+            <td>Employee Team Learder</td>
+            <td><input type="text" name="employee_teamleader" value="{{crud_employee.employee_teamleader}}"></td>
+            </tr>
+            <tr>
+            <td>Employee Full Time Status</td>
+            <td><input type="text" name="employee_fulltime" value="{{crud_employee.employee_fulltime}}"></td>
+            </tr>>
+        </tr>
+    </table>
+    <input type="submit" value="Update Record">
+    <a href = "{% url "employee_display" %}"> Display Employee Record </a>
+    {% if messeages %}
+    {{hi}}
+    {% for result in messeages  %} 
+    <b>{{result}}</b>
+    {% endfor %}
+    {% endif %}
+    </form>
+</body>
+</html>
