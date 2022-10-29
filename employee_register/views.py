@@ -37,3 +37,10 @@ def employee_update(request, id):
         messages.success(request, "The Student Record is Updated!")
     return render(request, "Edit.html")
 
+def employee_delete(request, id):
+    delete_employee = crud_employee.objects.get(id = id )
+    delete_employee.delete()
+    results = crud_employee.objects.all()
+    return render(request, "Index.html", {"crud_employee":results})
+
+
