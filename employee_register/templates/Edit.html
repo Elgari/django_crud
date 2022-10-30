@@ -41,7 +41,6 @@
     <input type="submit" value="Update Record">
     <a href = "{% url "employee_display" %}"> Display Employee Record </a>
     {% if messeages %}
-    {{hi}}
     {% for result in messeages  %} 
     <b>{{result}}</b>
     {% endfor %}

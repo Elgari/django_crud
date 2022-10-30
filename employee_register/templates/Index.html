@@ -9,15 +9,15 @@
         <h2>Using Django</h2>
         <hr/>
         <a href = "{% url "employee_insert" %}"> Add Employee Record </a>
-        <table border = 3>
+        <table border = 1>
             <tr>
                 <th>Record Number</th>
-                <th>Name</th>
+                <th>Employee Name</th>
                 <th>ID</th>
                 <th>Team</th>
-                <th>Team Employees</th>
+                <th>Employee Teammates</th>
                 <th>Team Leader</th>
-                <th>Full Time</th>
+                <th>Employee Full Time Status</th>
             </tr>
             {% for display_emp in crud_employee %}
             <tr>
